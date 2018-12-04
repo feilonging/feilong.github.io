@@ -1,0 +1,1 @@
+function elementDisplay(objid){var obj=document.getElementById(objid);if(obj.style.visibility !='hidden'){obj.style.visibility='hidden';}else{obj.style.visibility='visible';}}

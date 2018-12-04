@@ -1,0 +1,119 @@
+<html lang="zh">
+<head>
+<!--<link href="展开与收起 1.css" rel="stylesheet" type="text/css" />
+<link href="展开与收起 1.js" type="text/javascript" />
+-->
+
+<link rel="stylesheet" href="css/bootstrap.min01.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+
+<div class="panel-group" id="accordion">
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                href="#collapseOne">
+                dianji
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in"><!--class标签中"in"元素加上为默认展开-->
+            <div class="panel-body">
+                new web
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                href="#collapseOne">
+                点击我进行展开，再次点击我进行折叠。第 1 部分
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                new web
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                href="#collapseTwo">
+                点击我进行展开，再次点击我进行折叠。第 2 部分
+            </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body">
+            new web 2
+        </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                href="#collapseThree">
+                点击我进行展开，再次点击我进行折叠。第 3 部分
+            </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+                <a href="https://www.google.com">google</a>
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+                vice lomo.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="collapse" 
+    data-target="#demo">
+    简单的可折叠组件
+</button>    
+<div id="demo" class="collapse in">
+    new
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

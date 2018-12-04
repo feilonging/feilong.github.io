@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title></title>
+    <style type="text/css">
+    #play_btn {
+	position: absolute;
+	right: 100%-50px;
+	top: 0px;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50%;
+	filter: alpha(opacity=50);
+    }
+    
+    #play_btn button {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-image: url(music.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-color: transparent;
+        border: none;
+    }
+    
+    #play_btn audio {
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    
+    #play_btn.play {
+        -webkit-animation: play 5s linear infinite;
+        -moz-animation: play 5s linear infinite;
+        -ms-animation: play 5s linear infinite;
+        animation: play 5s linear infinite;
+    }
+    
+    #play_btn.pause {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none;
+    }
+    
+    @keyframes play {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    
+    @-moz-keyframes play {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    
+    @-webkit-keyframes play {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    
+    @-ms-keyframes play {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="play_btn">
+        <button type="button"></button>
+        <audio src="music.mp3" loop preload></audio>
+    </div>
+    <script>
+    /*
+              touchstart,DOMContentLoaded无法在jQuery.ready里执行监听操作
+            */
+    function autoPlay() {
+        /* 自动播放音乐效果，解决浏览器或者APP自动播放问题 */
+        function musicInBrowserHandler() {
+            audioToggle(true);
+            document.body.removeEventListener('touchstart', musicInBrowserHandler);
+        }
+        document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+        /* 自动播放音乐效果，解决微信自动播放问题 */
+        function musicInWeixinHandler() {
+            audioToggle(true);
+            document.addEventListener('WeixinJSBridgeReady', function() {
+                audioToggle(true);
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function() {
+                audioToggle(true);
+            }, false);
+            document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+    }
+    autoPlay();
+
+    // ====================================================
+
+    function audioToggle(isPlay) {
+        var playBtn = document.getElementById('play_btn');
+        var audio = playBtn.getElementsByTagName('audio')[0];
+
+        if (typeof(isPlay) == 'undefined') {
+            isPlay = !!audio.paused;
+        }
+
+        var space = String.fromCharCode(32); // 空格
+        var playBtnClass = space + (playBtn.getAttribute('class') || (isPlay ? 'play' : 'pause')) + space;
+        if (isPlay) {
+            playBtnClass = playBtnClass.replace(space + 'pause' + space, space + 'play' + space);
+            audio.play();
+
+        } else {
+            playBtnClass = playBtnClass.replace(space + 'play' + space, space + 'pause' + space);
+            audio.pause();
+        }
+        playBtn.className = playBtnClass.replace(/(^\s*)|(\s*$)/g, '');
+    }
+
+    document.getElementById('play_btn').onclick = function() {
+        audioToggle();
+    }
+    </script>
+</body>
+
+</html>

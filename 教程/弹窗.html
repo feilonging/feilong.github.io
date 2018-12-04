@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3/jQuery自定义弹出窗口DEMO演示</title>
+  <link rel="stylesheet" href="/css/弹窗.css" media="screen" type="text/css">
+</head>
+
+<body>
+<div class="md-modal md-effect-1" id="modal-1">
+  <div class="md-content">
+    <h3>标题</h3>
+    <div>
+      <p>这里是窗口</p>
+  	  <button class="md-close">选我！</button>
+    </div>
+  </div>
+</div>
+
+<div class="main clearfix">
+  <div class="column">
+    <button class="md-trigger" data-modal="modal-1">淡入and淡出</button>
+  </div>
+</div>
+
+<div class="md-overlay"></div><!--弹出窗口后背景颜色-->
+
+<script src="/js/弹窗.js"></script>
+  
+</body>
+</html>
