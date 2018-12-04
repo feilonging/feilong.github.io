@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #bgDiv {                 /*隐藏背景层*/
+            position: absolute;  /*绝对定位*/
+            left: 0px;
+            top: 0px;
+            background-color: black;
+            opacity: 0.2; /*设置不透明度，即可以看到层下面的内容，但是由于层的遮挡，背景是不可以进行操作的*/
+            display: none;
+        }
+ 
+        #fgDiv {                 /*隐藏逻辑业务窗口层*/
+            position: absolute;  /*绝对定位*/
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: #e7e7e7;
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+			//显示按钮点击，显示隐藏层
+            $('#btnShow').click(function(){
+				//显示隐藏层
+                $('#bgDiv').css('display', 'block')    //遮挡背景层(半透明)
+					.width(window.innerWidth+"px")
+					.height(window.innerHeight+"px");  
+                $('#fgDiv').css('display', 'block')
+					.css('left',(window.innerWidth-300)/2+"px")
+					.css('top',(window.innerHeight-100)/2+"px");  //逻辑业务窗口
+			}); 
+			
+			//点击窗口保存按钮，隐藏
+			$('#btnSave').click(function(){
+				//隐藏层 隐藏起来。
+                $('#bgDiv').css('display', 'none');  //遮挡背景层(半透明)
+                $('#fgDiv').css('display', 'none');  //逻辑 添加/修改 界面
+			});
+        });
+    </script>
+ 
+</head>
+    <body>
+        <table border="1" width="600" height="200" cellspacing="0" >
+            <tr>
+				<td> </td><td> </td><td> </td>
+			</tr>
+			<tr>
+				<td> </td><td> </td><td> </td>
+			</tr>
+        </table>
+        <input type="button" id="btnShow" value="显示" />    
+ 
+		<!--隐藏层在最顶层，放在最后-->
+        <div id="bgDiv">   <!--隐藏层，背景遮挡层(半透明)-->
+        </div>
+        <div id="fgDiv">   <!--隐藏层，逻辑业务窗口层-->
+            <input type="hidden" id="hidId"/>
+            编号：<input type="text" id="txtId"/>
+            <br/>
+            国家：<input type="text" id="txtCountry"/>
+            <br/>
+            首都：<input type="text" id="txtCapital"/>
+            <br/>
+            <input type="button" id="btnSave" value="保存"/>
+        </div>
+    </body>
+</html>

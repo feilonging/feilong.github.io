@@ -1,0 +1,143 @@
+<html>
+<head>
+<link href="/js/login.js" type="text/javascript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登陆系统</title>
+
+<script src="/js/login.js"></script>
+</head>
+<body>
+
+
+<p id="显示日期">在此处显示日期</p>
+​
+<button type="button" onclick="displayDate()">显示日期</button>
+​
+
+
+
+
+
+
+<h1>我的第一段 JavaScript</h1>
+<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">点击这里</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<input name="账号" type="text" value="（账号）" size="20" maxlength="15"><br>
+<input name="密码" type="password" value="" size="20" maxlength="15"><br>
+<input name="重复密码" type="password" value="" size="20" maxlength="15"><br>
+<input name="" type="submit">
+
+
+
+
+
+
+
+<form name="form" id="form">
+  <select name="jumpMenu_2" id="jumpMenu_2">
+    <option>项目1</option>
+    <option>项目2</option>
+    <option>项目3</option>
+    <option>项目4</option>
+  </select>
+  <input type="button" name="go_button" id= "go_button" value="前往" onclick="MM_jumpMenuGo('jumpMenu_2','parent',1)" />
+</form>
+<input name="0" type="hidden" value="10"><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input name="000" type="file" size="10">
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<select name="jumpMenu_1" id="jumpMenu_1" onchange="MM_jumpMenu('parent',this,0)">
+  <option value="1.html">001</option>
+  <option value="2.html">002</option>
+  <option value="3.html">003</option>
+  <option value="4.html">004</option>
+  <option value="5.html">005</option>
+  <option value="6.html">006</option>
+  <option value="7.html">007</option>
+  <option value="8.html">008</option>
+  <option value="9.html">009</option>
+  <option value="10.html">010</option>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

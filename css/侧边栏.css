@@ -1,0 +1,14 @@
+@charset "utf-8";
+	
+.鳥の詩{
+	color: #00F;
+	position:absolute; 
+	font-size:45px; 
+	width:400px; 
+	height:90px;
+}
+
+.音乐 {
+	height: 100px;
+	width: 110px;
+}
